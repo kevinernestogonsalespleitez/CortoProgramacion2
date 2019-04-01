@@ -5,17 +5,22 @@
  */
 package corto1;
 
+import java.util.ArrayList;
+import javax.swing.DefaultListModel;
+
 /**
  *
  * @author kevin
  */
 public class ventana extends javax.swing.JFrame {
-
-    /**
-     * Creates new form ventana
-     */
+    int NumeroES = 0;
+    ArrayList<String> ListaNombre = new ArrayList<String>();
+    ArrayList<String> ListaApellido = new ArrayList<String>();
+    ArrayList<String> ListaCarnet = new ArrayList<String>();
+    DefaultListModel modelo = new DefaultListModel();
     public ventana() {
         initComponents();
+        this.lstEstudiantes.setModel(modelo);
     }
 
     /**
@@ -27,21 +32,223 @@ public class ventana extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        buttonGroup1 = new javax.swing.ButtonGroup();
+        jPanel1 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        txtNombre = new javax.swing.JTextField();
+        jLabel2 = new javax.swing.JLabel();
+        txtApellido = new javax.swing.JTextField();
+        rbtonAgregar = new javax.swing.JRadioButton();
+        rbtnBuscar = new javax.swing.JRadioButton();
+        rbtnEditar = new javax.swing.JRadioButton();
+        rbtEliminar = new javax.swing.JRadioButton();
+        btnAcction = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
+        txtCarnet = new javax.swing.JTextField();
+        jPanel2 = new javax.swing.JPanel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        lstEstudiantes = new javax.swing.JList<>();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jLabel1.setText("Nombre");
+
+        jLabel2.setText("Apellido");
+
+        buttonGroup1.add(rbtonAgregar);
+        rbtonAgregar.setSelected(true);
+        rbtonAgregar.setText("Guardar");
+
+        buttonGroup1.add(rbtnBuscar);
+        rbtnBuscar.setText("Buscar");
+
+        buttonGroup1.add(rbtnEditar);
+        rbtnEditar.setText("Editar");
+
+        buttonGroup1.add(rbtEliminar);
+        rbtEliminar.setText("Eliminar");
+
+        btnAcction.setText("Ejecutar");
+        btnAcction.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAcctionActionPerformed(evt);
+            }
+        });
+
+        jLabel3.setText("Carnet");
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(rbtonAgregar)
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(rbtnBuscar)
+                                .addGap(18, 18, 18)
+                                .addComponent(rbtnEditar)
+                                .addGap(18, 18, 18)
+                                .addComponent(rbtEliminar))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                .addComponent(btnAcction)
+                                .addGap(126, 126, 126)))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jLabel1)
+                                .addGap(18, 18, 18)
+                                .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 269, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jLabel2)
+                                .addGap(18, 18, 18)
+                                .addComponent(txtApellido)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 114, Short.MAX_VALUE)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel3)
+                            .addComponent(txtCarnet, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(43, 43, 43))))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel1)
+                    .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel3))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel2)
+                    .addComponent(txtApellido, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtCarnet, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(30, 30, 30)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(rbtonAgregar)
+                    .addComponent(rbtnBuscar)
+                    .addComponent(rbtnEditar)
+                    .addComponent(rbtEliminar))
+                .addGap(18, 18, 18)
+                .addComponent(btnAcction)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        jScrollPane2.setViewportView(lstEstudiantes);
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane2)
+                .addContainerGap())
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(24, 24, 24)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnAcctionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAcctionActionPerformed
+        if(this.rbtonAgregar.isSelected()){
+            if(this.txtNombre.getText().length()==0 || this.txtApellido.getText().length()==0){
+                System.out.println("datos incompletos");
+            }
+            else{
+                this.NumeroES = this.NumeroES+1;
+                String Nombre = this.txtNombre.getText();
+                String Apellido = this.txtApellido.getText();
+                String Carnet = (Nombre.charAt(0)+""+Apellido.charAt(0)+"190"+this.NumeroES);
+                Estudiante obj = new Estudiante();
+                obj.setNombre(Nombre);
+                obj.setApellido(Apellido);
+                obj.setCarnet(Carnet);
+                this.ListaNombre.add(obj.getNombre());
+                this.ListaApellido.add(obj.getApellido());
+                this.ListaCarnet.add(obj.getCarnet());
+                modelo.addElement(Nombre+" "+Apellido+" "+Carnet);
+            }
+        }
+        if(this.rbtnBuscar.isSelected()){
+            if(this.txtCarnet.getText().length()==0){
+                System.out.println("Digite el carnet");
+            }
+            else{
+                String Carnet = this.txtCarnet.getText();
+                Control obj = new Control(this.ListaNombre,this.ListaApellido,this.ListaCarnet);
+                modelo.addElement(obj.Buscar(Carnet));
+            }
+        }
+        if(this.rbtnEditar.isSelected()){
+            if(this.txtNombre.getText().length()==0 || this.txtApellido.getText().length()==0 || this.txtCarnet.getText().length()==0){
+                System.out.println("datos incompletos");
+            }
+            else{
+                String Nombre = this.txtNombre.getText();
+                String Apellido = this.txtApellido.getText();
+                String Carnet = this.txtCarnet.getText();
+                Control obj = new Control(this.ListaNombre,this.ListaApellido,this.ListaCarnet);
+                int pocicion =obj.Editar(Carnet);
+                this.ListaNombre.remove(pocicion);
+                this.ListaApellido.remove(pocicion);
+                this.ListaCarnet.remove(pocicion);
+                this.ListaNombre.add(pocicion, Nombre);
+                this.ListaApellido.add(pocicion, Apellido);
+                this.ListaCarnet.add(pocicion, Carnet);
+            }
+        }
+        if(this.rbtEliminar.isSelected()){
+            if(this.txtNombre.getText().length()==0 || this.txtApellido.getText().length()==0 || this.txtCarnet.getText().length()==0){
+                System.out.println("datos incompletos");
+            }
+            else{
+                String Nombre = this.txtNombre.getText();
+                String Apellido = this.txtApellido.getText();
+                String Carnet = this.txtCarnet.getText();
+                Control obj = new Control(this.ListaNombre,this.ListaApellido,this.ListaCarnet);
+                int pocicion = obj.Eliminar(Carnet);
+                this.ListaNombre.remove(pocicion);
+                this.ListaApellido.remove(pocicion);
+                this.ListaCarnet.remove(pocicion);
+                System.out.println(this.ListaNombre);
+                System.out.println(this.ListaApellido);
+                System.out.println(this.ListaCarnet);
+            }
+        }
+        
+    }//GEN-LAST:event_btnAcctionActionPerformed
 
     /**
      * @param args the command line arguments
@@ -79,5 +286,21 @@ public class ventana extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnAcction;
+    private javax.swing.ButtonGroup buttonGroup1;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JList<String> lstEstudiantes;
+    private javax.swing.JRadioButton rbtEliminar;
+    private javax.swing.JRadioButton rbtnBuscar;
+    private javax.swing.JRadioButton rbtnEditar;
+    private javax.swing.JRadioButton rbtonAgregar;
+    private javax.swing.JTextField txtApellido;
+    private javax.swing.JTextField txtCarnet;
+    private javax.swing.JTextField txtNombre;
     // End of variables declaration//GEN-END:variables
 }
