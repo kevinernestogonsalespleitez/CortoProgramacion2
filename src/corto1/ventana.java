@@ -1,6 +1,8 @@
 package corto1;
 
+import java.awt.Color;
 import java.util.ArrayList;
+import java.util.Collections;
 import javax.swing.DefaultListModel;
 import javax.swing.JOptionPane;
 
@@ -14,9 +16,12 @@ public class ventana extends javax.swing.JFrame {
     ArrayList<String> ListaApellido = new ArrayList<String>();
     ArrayList<String> ListaCarnet = new ArrayList<String>();
     DefaultListModel modelo = new DefaultListModel();
+    DefaultListModel modeloAccion = new DefaultListModel();
     public ventana() {
         initComponents();
         this.ltsRegistro.setModel(modelo);
+        this.lstEstudiantes.setModel(modeloAccion);
+        this.setLocationRelativeTo(null);
     }
 
     /**
@@ -49,8 +54,12 @@ public class ventana extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         ltsRegistro = new javax.swing.JList<>();
         btnOrdenar = new javax.swing.JButton();
+        btnSalir = new javax.swing.JButton();
+        jLabel6 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
@@ -140,8 +149,11 @@ public class ventana extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(15, 24, -1, -1));
+
         jPanel2.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
+        lstEstudiantes.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jScrollPane2.setViewportView(lstEstudiantes);
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
@@ -150,7 +162,7 @@ public class ventana extends javax.swing.JFrame {
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane2)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 344, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
@@ -161,26 +173,28 @@ public class ventana extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(15, 374, 378, -1));
+
         jPanel3.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel4.setText("Registro");
 
-        ltsRegistro.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        ltsRegistro.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jScrollPane1.setViewportView(ltsRegistro);
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 296, Short.MAX_VALUE)
+                .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel4)
-                .addGap(152, 152, 152))
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 379, Short.MAX_VALUE)
-                .addContainerGap())
+                .addGap(117, 117, 117))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -192,48 +206,26 @@ public class ventana extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
+        getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(411, 16, 330, 477));
+
         btnOrdenar.setText("Ordenar");
         btnOrdenar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnOrdenarActionPerformed(evt);
             }
         });
+        getContentPane().add(btnOrdenar, new org.netbeans.lib.awtextra.AbsoluteConstraints(459, 500, 110, 40));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addContainerGap())
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(175, 175, 175)
-                        .addComponent(btnOrdenar)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(24, 24, 24)
-                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGap(18, 18, 18)
-                        .addComponent(btnOrdenar)))
-                .addContainerGap(18, Short.MAX_VALUE))
-        );
+        btnSalir.setText("Salir");
+        btnSalir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSalirActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 500, 100, 40));
+
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/corto1/Imagenes/fondo.jpg"))); // NOI18N
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -20, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -255,22 +247,22 @@ public class ventana extends javax.swing.JFrame {
                 this.ListaNombre.add(obj.getNombre());
                 this.ListaApellido.add(obj.getApellido());
                 this.ListaCarnet.add(obj.getCarnet());
-                modelo.addElement(Nombre+"     "+Apellido+"     "+Carnet);
+                modelo.addElement(Nombre+" "+Apellido+" "+Carnet);
             }
         }
         if(this.rbtnBuscar.isSelected()){
             if(this.txtCarnet.getText().length()==0){
-                System.out.println("Digite el carnet");
+                JOptionPane.showMessageDialog(null,"Digite el carnet");
             }
             else{
                 String Carnet = this.txtCarnet.getText();
                 Control obj = new Control(this.ListaNombre,this.ListaApellido,this.ListaCarnet);
-                modelo.addElement(obj.Buscar(Carnet));
+                this.modeloAccion.addElement("Resultado de Busqueda: "+obj.Buscar(Carnet));
             }
         }
         if(this.rbtnEditar.isSelected()){
             if(this.txtNombre.getText().length()==0 || this.txtApellido.getText().length()==0 || this.txtCarnet.getText().length()==0){
-                System.out.println("datos incompletos");
+                JOptionPane.showMessageDialog(null,"datos incompletos");
             }
             else{
                 String Nombre = this.txtNombre.getText();
@@ -284,11 +276,16 @@ public class ventana extends javax.swing.JFrame {
                 this.ListaNombre.add(pocicion, Nombre);
                 this.ListaApellido.add(pocicion, Apellido);
                 this.ListaCarnet.add(pocicion, Carnet);
+                this.modeloAccion.addElement("Se edito :"+this.ListaNombre.get(pocicion)+" "+this.ListaApellido.get(pocicion)+" "+this.ListaCarnet.get(pocicion));
+                this.modelo.removeAllElements();
+                for(int i =0;i<this.ListaNombre.size();i++){
+                    this.modelo.addElement(this.ListaNombre.get(i)+" "+this.ListaApellido.get(i)+" "+this.ListaCarnet.get(i));
+                }
             }
         }
         if(this.rbtEliminar.isSelected()){
-            if(this.txtNombre.getText().length()==0 || this.txtApellido.getText().length()==0 || this.txtCarnet.getText().length()==0){
-                System.out.println("datos incompletos");
+            if(this.txtCarnet.getText().length()==0){
+                JOptionPane.showMessageDialog(null,"Datos Incompletos");
             }
             else{
                 String Nombre = this.txtNombre.getText();
@@ -296,20 +293,37 @@ public class ventana extends javax.swing.JFrame {
                 String Carnet = this.txtCarnet.getText();
                 Control obj = new Control(this.ListaNombre,this.ListaApellido,this.ListaCarnet);
                 int pocicion = obj.Eliminar(Carnet);
+                this.modeloAccion.addElement("Elimino :"+this.ListaNombre.get(pocicion)+" "+this.ListaApellido.get(pocicion)+" "+this.ListaCarnet.get(pocicion));
+                this.modelo.removeAllElements();
                 this.ListaNombre.remove(pocicion);
                 this.ListaApellido.remove(pocicion);
                 this.ListaCarnet.remove(pocicion);
                 System.out.println(this.ListaNombre);
                 System.out.println(this.ListaApellido);
                 System.out.println(this.ListaCarnet);
+                for(int i =0;i<this.ListaNombre.size();i++){
+                    this.modelo.addElement(this.ListaNombre.get(i)+" "+this.ListaApellido.get(i)+" "+this.ListaCarnet.get(i));
+                }
             }
         }
         
     }//GEN-LAST:event_btnAcctionActionPerformed
 
     private void btnOrdenarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOrdenarActionPerformed
-        
+        ArrayList<String> Extra = new ArrayList<String>();
+        for(int i = 0;i<this.ListaNombre.size();i++){
+            Extra.add(this.ListaNombre.get(i)+"  "+this.ListaApellido.get(i)+"  "+this.ListaCarnet.get(i));
+        }
+        Collections.sort(Extra);
+        this.modelo.removeAllElements();
+        for(int i = 0;i<Extra.size();i++){
+            this.modelo.addElement(Extra.get(i));
+        }
     }//GEN-LAST:event_btnOrdenarActionPerformed
+
+    private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
+        System.exit(0);
+    }//GEN-LAST:event_btnSalirActionPerformed
 
     /**
      * @param args the command line arguments
@@ -349,11 +363,13 @@ public class ventana extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAcction;
     private javax.swing.JButton btnOrdenar;
+    private javax.swing.JButton btnSalir;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
